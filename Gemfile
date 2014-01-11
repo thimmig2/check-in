@@ -18,15 +18,14 @@ gem 'rolify'
 gem 'simple_form'
 gem 'rails3-jquery-autocomplete'
 gem 'therubyracer', :platform=>:ruby
+gem 'pg'
 group :development do
   gem 'hub', :require=>nil
+  gem 'rspec-rails'
   gem 'rails_layout'
 end
-group :development, :test do
-  gem 'rspec-rails'
-end
 group :production do
-  gem 'pg'
+  gem 'rails_12factor'
   gem 'unicorn'
 end
 group :test do
