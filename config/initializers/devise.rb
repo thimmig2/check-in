@@ -95,7 +95,7 @@ Devise.setup do |config|
   config.stretches = Rails.env.test? ? 1 : 10
 
   # Setup a pepper to generate the encrypted password.
-  # config.pepper = '9624891a0a66070ad386f5e739290406bb60c2a31d767d86db25ed8ed9642dfcd7ffea7fa588be5bd1730e4be30af488f1bf0e6808211c66dfad369702d043ec'
+  config.pepper = '9624891a0a66070ad386f5e739290406bb60c2a31d767d86db25ed8ed9642dfcd7ffea7fa588be5bd1730e4be30af488f1bf0e6808211c66dfad369702d043ec'
 
   # ==> Configuration for :invitable
   # The period the generated invitation token is valid, after
@@ -160,7 +160,7 @@ Devise.setup do |config|
 
   # ==> Configuration for :validatable
   # Range for password length. Default is 8..128.
-  config.password_length = 8..128
+  config.password_length = 6..128
 
   # Email regex used to validate email formats. It simply asserts that
   # one (and only one) @ exists in the given string. This is mainly

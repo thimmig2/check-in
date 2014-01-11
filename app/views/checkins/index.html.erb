@@ -1,0 +1,24 @@
+<h1>Manage Checkins</h1>
+<h3>New Checkin</h3>
+<%= render 'form' %>
+<br>
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th>User</th>
+      <th>Event</th>
+      <th>Options</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @checkins.each do |checkin| %>
+      <tr>
+        <td><%= User.find(checkin.user_id).name %></td>
+        <td><%= Event.find(checkin.event_id).name %></td>
+        <td><%= link_to 'Delete', checkin, method: :delete, data: { confirm: 'Are you sure?' }, :class => "btn"  %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+

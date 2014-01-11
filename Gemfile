@@ -6,6 +6,7 @@ gem 'sass-rails', '~> 4.0.0'
 gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.0.0'
 gem 'jquery-rails'
+gem 'jquery-ui-rails'
 gem 'turbolinks'
 gem 'jbuilder', '~> 1.2'
 gem 'bootstrap-sass', '>= 3.0.0.0'
@@ -15,6 +16,7 @@ gem 'devise_invitable'
 gem 'figaro'
 gem 'rolify'
 gem 'simple_form'
+gem 'rails3-jquery-autocomplete'
 gem 'therubyracer', :platform=>:ruby
 group :development do
   gem 'hub', :require=>nil

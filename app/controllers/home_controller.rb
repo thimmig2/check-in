@@ -1,5 +1,12 @@
 class HomeController < ApplicationController
+  before_filter :authenticate_user!
+  
   def index
-    @users = User.all
+    @username = current_user.name
+    @checkins = Checkin.where(user_id: current_user.id)      
+    respond_to do |format|
+      format.html  # index.html.erb
+    end
   end
+  
 end
