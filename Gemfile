@@ -19,10 +19,12 @@ gem 'rails3-jquery-autocomplete'
 gem 'therubyracer', :platform=>:ruby
 gem 'pg'
 gem 'postmark-rails'
+
 group :development do
   gem 'hub', :require=>nil
   gem 'rspec-rails'
   gem 'rails_layout'
+  gem 'sqlite3'
 end
 group :production do
   gem 'rails_12factor'
