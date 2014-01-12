@@ -3,7 +3,8 @@ class HomeController < ApplicationController
   
   def index
     @username = current_user.name
-    @checkins = Checkin.where(user_id: current_user.id)      
+    @checkins = Checkin.where(user_id: current_user.id)   
+    @points = calculatePoints(@checkins)
     respond_to do |format|
       format.html  # index.html.erb
     end
