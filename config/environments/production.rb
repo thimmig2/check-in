@@ -81,6 +81,7 @@ AkpsiPoints::Application.configure do
     :authentication => :plain,
   }
   ActionMailer::Base.delivery_method = :smtp
+  config.action_mailer.default_url_options = { :host => 'sleepy-waters-8767.herokuapp.com' }
   config.action_mailer.perform_deliveries = true
   config.action_mailer.raise_delivery_errors = false
 
