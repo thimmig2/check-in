@@ -1,6 +1,5 @@
 <h1>Manage Events (Click to Edit)</h1>
 
-
 <h3>New Event</h3>
 <%= render 'form' %>
 <br>
@@ -21,6 +20,7 @@
         <td><%= event.name %></td>
         <td><%= event.type_id %></td>
         <td><%= event.checkins.count %></td>
+        <td><%= link_to 'Delete', event, :class => "btn", method: :delete, data: { confirm: 'Are you sure?' } %></td>
     </tr>
     <% end %>
   </tbody>

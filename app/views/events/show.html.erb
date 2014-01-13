@@ -1,4 +1,4 @@
-<h1><%= "#{@event.name}  " %><%= link_to 'Destroy', @event, :class => "btn", method: :delete, data: { confirm: 'Are you sure?' } %><h1>
+<h1><%= @event.name %><%= link_to 'Delete', @event, :class => "btn", method: :delete, data: { confirm: 'Are you sure?' } %><h1>
 
 <h3>New Checkin</h3>
   <%= render 'checkins/form' %>
