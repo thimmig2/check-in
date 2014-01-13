@@ -1,4 +1,7 @@
 class Event < ActiveRecord::Base
   resourcify
-  has_many :checkins, dependent: :destroy
+  validates :name, presence: true
+  validates :type_id, presence: true
+  
+  has_many :checkins
 end

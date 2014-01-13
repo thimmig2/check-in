@@ -5,6 +5,7 @@
 $(document).off('click', "tr").on('click', "tr", ->
   if $(this).attr("data-link")
     window.location = $(this).data("link")
+    console.log('fired')
   
 )
 
