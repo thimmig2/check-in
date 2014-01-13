@@ -14,9 +14,9 @@ class EventsController < ApplicationController
   def show
     authorize! :index, @event, :message => 'Not authorized as an administrator.'
     @event = Event.find(params[:id])
-    @users = @event.users
-    @users.sort! do |a,b| 
-      a.name.downcase <=> b.name.downcase
+    @checkins = @event.checkins
+    @checkins.sort! do |a,b| 
+      a.user.name.downcase <=> b.user.name.downcase
     end
   end
 
