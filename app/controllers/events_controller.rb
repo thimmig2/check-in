@@ -10,6 +10,15 @@ class EventsController < ApplicationController
     @events = Event.find(:all, order: "created_at DESC")
     @event = Event.new
   end
+  
+  def show
+    authorize! :index, @event, :message => 'Not authorized as an administrator.'
+    @event = Event.find(params[:id])
+    @users = @event.users
+    @users.sort! do |a,b| 
+      a.name.downcase <=> b.name.downcase
+    end
+  end
 
   # GET /events/1/edit
   def edit

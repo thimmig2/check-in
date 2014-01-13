@@ -1,19 +1,20 @@
-<p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @event.name %>
-</p>
+<h3>Attendees - <%= @event.name %></h3>
 
-<p>
-  <strong>Date held:</strong>
-  <%= @event.date_held %>
-</p>
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th>Name</th>
+    </tr>
+  </thead>
 
-<p>
-  <strong>Type:</strong>
-  <%= @event.type_id %>
-</p>
+  <tbody>
+    <% @users.each do |user| %>
+      <tr>
+        <td><%= user.name %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
 
-<%= link_to 'Edit', edit_event_path(@event) %> |
 <%= link_to 'Back', events_path %>
