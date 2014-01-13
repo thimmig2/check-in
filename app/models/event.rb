@@ -3,5 +3,5 @@ class Event < ActiveRecord::Base
   validates :name, presence: true
   validates :type_id, presence: true
   
-  has_many :checkins
+  has_many :checkins, dependent: :destroy
 end
