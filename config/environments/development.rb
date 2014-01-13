@@ -43,4 +43,6 @@ AkpsiPoints::Application.configure do
   # Send email in development mode.
   config.action_mailer.perform_deliveries = true
 
+  config.force_ssl = true
+  
 end

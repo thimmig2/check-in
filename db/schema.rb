@@ -13,17 +13,17 @@
 
 ActiveRecord::Schema.define(version: 20140111225850) do
 
-  create_table "Events", force: true do |t|
-    t.string   "name"
-    t.date     "date_held"
-    t.string   "type_id"
+  create_table "checkins", force: true do |t|
+    t.integer  "user_id"
+    t.integer  "event_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  create_table "checkins", force: true do |t|
-    t.integer  "user_id"
-    t.integer  "event_id"
+  create_table "events", force: true do |t|
+    t.string   "name"
+    t.date     "date_held"
+    t.string   "type_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
