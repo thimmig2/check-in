@@ -2,7 +2,7 @@
 # All this logic will automatically be available in application.js.
 # You can use CoffeeScript in this file: http://coffeescript.org/
 
-$(document).on('click', "tr", ->
+$(document).off('click', "tr").on('click', "tr", ->
   if $(this).attr("data-link")
     window.location = $(this).data("link")
   
