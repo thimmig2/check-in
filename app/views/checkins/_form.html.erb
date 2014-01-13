@@ -1,6 +1,6 @@
 <%= simple_form_for(@checkin, html: {class: 'form-horizontal'}) do |f| %>
   <%= f.error_notification %>
-  <%= f.association :user, collection: User.all(order: 'name'), prompt: "Select Person" %>
-  <%= f.association :event, collection: Event.all(order: "created_at DESC"), prompt: "Select Event" %>
-    <%= f.button :submit, "Submit" %>
+  <%= f.association :user, collection: User.all(order: 'name'), prompt: "Select Person", required: true %>
+  <%= f.association :event, collection: Event.all(order: "created_at DESC"), prompt: "Select Event", required: true %>
+  <%= f.button :submit, "Submit" %>
 <% end %>

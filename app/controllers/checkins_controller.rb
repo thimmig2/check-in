@@ -7,7 +7,9 @@ class CheckinsController < ApplicationController
   # GET /checkins.json
   def index
     authorize! :index, @checkin, :message => 'Not authorized as an administrator.'
-    @checkins = Checkin.all
+    @checkins = Checkin.all.sort do |a,b| 
+      (a.event.created_at <=> b.event.created_at) * -1
+    end
     @checkin = Checkin.new
   end
 
@@ -15,9 +17,8 @@ class CheckinsController < ApplicationController
   # POST /checkins.json
   def create
     @newCheckin = Checkin.create(params[:checkin].permit(:user_id, :event_id))
-
     respond_to do |format|
-      format.html { redirect_to action: 'index' }
+      format.html { redirect_to request.referer }
     end
   end
 
@@ -27,7 +28,7 @@ class CheckinsController < ApplicationController
     authorize! :index, @checkin, :message => 'Not authorized as an administrator.'
     @checkin.destroy
     respond_to do |format|
-      format.html { redirect_to checkins_url }
+      format.html { redirect_to request.referer }
       format.json { head :no_content }
     end
   end

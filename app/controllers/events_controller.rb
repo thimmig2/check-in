@@ -18,6 +18,8 @@ class EventsController < ApplicationController
     @checkins.sort! do |a,b| 
       a.user.name.downcase <=> b.user.name.downcase
     end
+    @checkin = Checkin.new
+    @checkin.event = @event
   end
 
   # GET /events/1/edit

@@ -14,8 +14,8 @@
   <tbody>
     <% @checkins.each do |checkin| %>
       <tr>
-        <td><%= User.find(checkin.user_id).name %></td>
-        <td><%= Event.find(checkin.event_id).name %></td>
+        <td><%= checkin.user.name %></td>
+        <td><%= checkin.event.name %></td>
         <td><%= link_to 'Delete', checkin, method: :delete, data: { confirm: 'Are you sure?' }, :class => "btn"  %></td>
       </tr>
     <% end %>
