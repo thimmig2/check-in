@@ -3,6 +3,6 @@ class Checkin < ActiveRecord::Base
   validates :user, presence: true
   validates :event, presence: true
   
-  belongs_to :user, dependent: :destroy
-  belongs_to :event, dependent: :destroy
+  belongs_to :user
+  belongs_to :event
 end
